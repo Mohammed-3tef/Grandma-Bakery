@@ -122,12 +122,16 @@ header {
             display: flex;
             justify-content: center;
             padding: 2rem 0rem 1rem;
+            position: relative;
+            z-index: 10;
         }
     }
 }
 
 .collection{
     max-height: fit-content;
+    position: relative;
+    z-index: 10;
     padding: 1.5rem 0rem;
     background-color: transparent;
     display: flex;
