@@ -86,7 +86,7 @@ offers.forEach((item) => {
                     max-height: 80%;
                 }
             }
-            a:hover {color: rgb(229, 134, 8);}
+            a:hover {color: #cfa334;}
             
             @media (max-device-width: 800px){
                 .offerCard {
@@ -100,3 +100,23 @@ offers.forEach((item) => {
 
 nextBtn.addEventListener("click", nextImg);
 prevBtn.addEventListener("click", prevImg);
+
+var swiper = new Swiper(".mySwiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  loop: true,
+  slidesPerView: "auto",
+  speed: 1250,
+  coverflowEffect: {
+    rotate: 0,
+    stretch: -200,
+    depth: 300,
+    modifier: 1,
+    slideShadows: false,
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  }
+});
