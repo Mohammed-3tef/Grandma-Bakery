@@ -9,7 +9,7 @@
 }
 
 section, footer {padding: 1.75rem 6.5rem;}
-/* section {background-color: ;} */
+header, section {background-color: rgba(255, 253, 248, 1);}
 .sectionTitle {
     font-size: 2rem;
     font-weight: 700;
@@ -29,6 +29,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 6.5rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    span {display: none; cursor: pointer; font-size: x-large;}
 }
 
 .logo {
@@ -39,18 +43,153 @@ header {
     }
 }
 
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    background-color: rgb(236, 235, 235);
+    overflow-x: hidden;
+    transition: 0.55s;
+    align-content: center;
+    a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 27.5px;
+      color: #818181;
+      display: block;
+      transition: 0.35s;
+    }
+    .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 50px;
+      margin-left: 50px;
+    }
+  }
+
 .navBar {
     display: flex;
     gap: 2.5rem;
     ul a{
-        color: black;
+        color: rgba(126, 126, 126, 1);
+        font-weight: 500;
         text-decoration: none;
+        transition: 450ms;
     }
 }
 
+.navBar a:hover {color: black;}
+
+@keyframes growreading {
+    to {width: 100%;}
+}
+.reading {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: rgba(49, 49, 49, 1);
+    animation: growreading linear;
+    animation-timeline: scroll(root);
+}
 /* ========================================>> Home <<======================================== */
 
+.heroSection {
+    .homeDetails {
+        position: relative;
+        z-index: 10;
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+        .homeTitle {
+            font-family: "Tangerine";
+            font-size: 4.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        .homeMarginDetails {
+            color: rgba(126, 126, 126, 1);
+            font-size: 0.85rem;
+            font-weight: 400;
+            text-align: center;
 
+        }
+        .homeBtn {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 0rem 1rem;
+        }
+    }
+}
+
+.collection{
+    max-height: fit-content;
+    padding: 1.5rem 0rem;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.collection .content{
+    max-height: fit-content;
+    max-width: fit-content;
+    background-color: transparent;
+    border-radius: .6rem;
+    overflow: hidden;
+}
+
+.content img{
+    max-width: 100%;
+    border-radius: .6rem;
+}
+
+.seeMore {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: rgba(49, 49, 49, 1);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 8px, 24px, 8px, 24px;
+    width: 140px;
+    height: 45px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+   
+.seeMore span {
+    font-family: Montserrat;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: left;        
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+   
+.seeMore span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+}
+   
+.seeMore:hover span {padding-right: 15px;}
+   
+.seeMore:hover span:after {
+    opacity: 1;
+    right: 0;
+}
 
 /* ========================================>> What we offer <<======================================== */
 
@@ -61,7 +200,7 @@ header {
         max-width: fit-content;
         img {max-width: fit-content;}
     }
-    .sectionMarginTitle {text-align: center;}
+    .sectionMarginTitle {z-index: 5; text-align: center;}
     #offerDetails {
         display: flex;
         padding: 1.5rem 0rem;
@@ -83,14 +222,6 @@ header {
         justify-content: space-evenly;
         flex-direction: column;
         .sectionTitle {text-align: left;}
-        button {
-            cursor: pointer;
-            max-width: 8.2rem;
-            font-size: 1rem;
-            padding: 8.5px 20px;
-            background: rgba(49, 49, 49, 1);
-            color: white;
-        }
     }
 }
 
@@ -107,7 +238,7 @@ header {
     }
     
     .slider {
-        padding: 3.75rem 0rem 1.5rem;
+        padding: 3.75rem 0rem 1rem;
         position: relative;
         align-content: center;
         max-width: 100%;
@@ -118,7 +249,7 @@ header {
         }
         .slide {
             margin: 0rem 5.5rem;
-            padding: 2.5rem 5rem;
+            padding: 1.5rem 5rem;
             display: flex;
             justify-content: space-evenly;
             align-items: center;
@@ -126,7 +257,7 @@ header {
             min-height: fit-content;
             border-radius: 1.75rem;
             gap: 5rem;
-            background-image: linear-gradient(to bottom right, gray, white);
+            background-image: linear-gradient(to bottom left, rgb(251, 237, 202) , white);
             transition: 450ms;
             .reviewDetails {
                 display: flex;
@@ -135,8 +266,8 @@ header {
             }
         }
         img {
-            max-width: 165px;
-            max-height: 165px;
+            max-width: 150px;
+            max-height: 150px;
             border-radius: 50%;
         }
         .clientName, .clientReview {
@@ -223,20 +354,52 @@ footer a:hover {color: rgb(229, 134, 8);}
 /* =======>> Computer | | Laptop */
 @media only screen and (max-width: 1024px){
     * {text-align: center;}
-    section, footer {padding-right: 50px; padding-left: 50px;}
+    section, footer {padding-left: 1.75rem; padding-right: 1.75rem;}
     header {
-        padding: 20px 70px;
-        span {display: block; font-size: xx-large;}
+        padding: 0.75rem 3.5rem;
+        span {display: block; font-size: x-large;}
         .navBar {display: none;}
+    }
+    
+    .offers {
+        #offerDetails {
+            gap: 0.25rem;
+        }
+    }
+    
+    .reviews{
+        .slider {
+            .slide {
+                padding: 1.5rem 1rem;
+                gap: 3rem;
+                justify-content: space-between;
+                flex-direction: column;
+                .clientName, .clientReview {font-size: 1.25rem;}
+            }
+        }
+    }
+    .about {
+        flex-direction: column;
+        gap: 3.5rem;
+        .aboutDetails {
+            padding: 0rem 0.75rem 3rem; 
+            .sectionTitle {text-align: center;}
+            .sectionMarginTitle {padding: 1rem 0rem;}
+        }
+        
     }
     .footer1 {
         flex-direction: column-reverse;
         gap: 2.5rem;
+        .contactDetails {
+            display: flex;
+            justify-content: space-around;
+        }
         .links {
             display: flex; 
             justify-content: space-between; 
             flex-direction: row; 
-            gap: 0rem;
+            gap: 0.5rem;
         }
     }
     .footer2 {
@@ -250,7 +413,7 @@ footer a:hover {color: rgb(229, 134, 8);}
     * {text-align: center;}
     section, footer {padding-left: 1.75rem; padding-right: 1.75rem;}
     header {
-        padding: 0.75rem 2.5rem;
+        padding: 0.75rem 3.5rem;
         span {display: block; font-size: x-large;}
         .navBar {display: none;}
     }
@@ -305,16 +468,81 @@ footer a:hover {color: rgb(229, 134, 8);}
 /* ==============>> Mobile */
 /* =======>> Computer | | Laptop */
 @media only screen and (max-width: 600px){
-    
+    header {
+        padding: 0.75rem 1.5rem;
+        .logo {
+            img {
+                width: 40%;
+                height: 40%;
+            }
+            p {
+                font-size: 0.65rem;
+            }
+        }
+        .sidenav a {font-size: 1.5rem;}
+    }
+    .heroSection {
+        .homeDetails {
+            .homeTitle {font-size: 3rem;}
+        }
+    }
+    .reviews {
+        padding: 1.75rem;
+        .slider {
+            .slide {
+                margin: 0rem 1.25rem;
+                gap: 1.5rem;
+            }
+        }
+        
+        .sliderBtn {
+            justify-content: space-around;
+        }
+    }
+    .footer1 {
+        .links{
+            flex-direction: column; 
+        }
+        .contactDetails {
+            display: flex;
+            flex-direction: column;
+        }
+        iframe {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    .footer2 {
+        .CR {font-size: smaller;}
+    }
 }
 
 /* =======>> Phone */
 @media (max-device-width: 500px){
+    header {
+        padding: 0.75rem 1.5rem;
+        .logo {
+            img {
+                width: 35%;
+                height: 35%;
+            }
+            p {
+                font-size: 0.65rem;
+            }
+        }
+        .sidenav a {font-size: 1.5rem;}
+    }
+    .heroSection {
+        .homeDetails {
+            .homeTitle {font-size: 3rem;}
+        }
+    }
     .reviews {
-        padding: 2.25rem;
+        padding: 1.75rem;
         .slider {
             .slide {
                 margin: 0rem 1.25rem;
+                gap: 1.5rem;
             }
         }
         
