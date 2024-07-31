@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="shortcut icon" type="image/x-icon" href="GrandmaBakeryLogo.svg">
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script defer src="main.js"></script>
     <title>Grandma’s Bakery</title>
 </head>
@@ -17,18 +19,62 @@
             <p>Grandma’s <br> Bakery</p>
         </div>
         
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#"><p>Home</p></a>
+            <a href="#About"><p>About</p></a>
+            <a href="#Certifications"><p>Menu</p></a>
+            <a href="#Contact"><p>Contact</p></a>
+        </div>
+        
         <nav class="navBar">
             <ul><a href="">Home</a></ul>
             <ul><a href="">About</a></ul>
             <ul><a href="">Menu</a></ul>
             <ul><a href="">Contact</a></ul>
         </nav>
+        
+        <span onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
+        <div class="reading"></div>
     </header>
     
     <main>
         <!-- ===================================================>> Home Section (Start) <<=================================================== -->
-        <section>
-        
+        <section class="heroSection">
+            <div class="homeDetails">
+                <p class="homeTitle">Enjoy fresh items of our <br> Grandma’s Reciepe </p>
+                <img src="Images/Items/item6.svg" alt="" style="position: absolute; right: 3.5%;top: 20%;z-index: 2;">
+                <div class="homeBtn">
+                    <button class="seeMore"><span>See Menu</span></button>
+                </div>
+                <p class="homeMarginDetails">* 10% off on first order</p>
+            </div>
+            
+            <img src="Images/Items/item5.svg" alt="" style="position: absolute; left: 0%; top: 35%; z-index: 2;">
+            <div class="collection">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="content swiper-slide">
+                        <img src="Images/image1.svg" alt="">
+                      </div>
+                      <div class="content swiper-slide">
+                        <img src="Images/image2.svg" alt="">
+                      </div>
+                      <div class="content swiper-slide">
+                        <img src="Images/image3.svg" alt="">
+                      </div>
+                      <div class="content swiper-slide">
+                        <img src="Images/image1.svg" alt="">
+                      </div>
+                      <div class="content swiper-slide">
+                        <img src="Images/image2.svg" alt="">
+                      </div>
+                      <div class="content swiper-slide">
+                        <img src="Images/image3.svg" alt="">
+                      </div>
+                </div>
+            </div>
+            
         </section>
         <!-- ===================================================>> Home Section (End) <<=================================================== -->
         
@@ -36,7 +82,7 @@
         <section class="offers">
             <div class="Title">
                 <p class="sectionTitle">What we offer</p>
-                <img src="Images/line.svg" alt="">
+                <img src="Images/Items/line.svg" alt="">
             </div>
             <p class="sectionMarginTitle">Introducing you a wide variety of bakery items with unique taste <br> and the creamiest of cakes in the city.</p>
             <div id="offerDetails"></div>
@@ -50,13 +96,13 @@
             <div class="aboutDetails">
                 <div class="">
                     <p class="sectionTitle">About Grandma’s Bakery</p>
-                    <img src="Images/line.svg" alt="">
+                    <img src="Images/Items/line.svg" alt="">
                 </div>
                 
                 <p class="sectionMarginTitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem similique quam minima quisquam libero. Maxime quod suscipit nam deserunt soluta debitis reiciendis molestiae omnis, repellendus repudiandae maiores ad voluptatum sit!</p>
                 
                 <div class="aboutBtn">
-                    <button>Read More</button>
+                    <button class="seeMore"><span>Read More</span></button>
                 </div>
             </div>
         </section>
@@ -66,7 +112,7 @@
         <section class="reviews">
             <div class="reviewsTitle">
                 <p class="sectionTitle">Reviews from Customers</p>
-                <img src="Images/line.svg" alt="">
+                <img src="Images/Items/line.svg" alt="">
             </div>
             
             <div class="slider">
@@ -74,7 +120,7 @@
                   <div class="slide">
                     <img src="Images/Reviews/MostafaMohammed.jpg" alt="">
                     <div class="reviewDetails">
-                        <p class="clientReview">The ambiance and food at Yili Restaurant were outstanding. A must-visit!</p>
+                        <p class="clientReview">The ambiance and food at Grandma’s Bakery were outstanding. A must-visit!</p>
                         <p class="clientName"><strong>Mostafa Mohammed,</strong> Student</p>
                     </div>
                     
@@ -98,21 +144,21 @@
                   <div class="slide">
                     <img src="Images/Reviews/AhmedMohammed.jpg" alt="">
                     <div class="reviewDetails">
-                        <p class="clientReview">First visit to Yili Restaurant, and it did not disappoint! Will return.</p>
+                        <p class="clientReview">We recommend Grandma’s bakery for all freshly baked desserts, cakes, cupcakes, cookies, mousses & pies. Everything is baked daily.</p>
                         <p class="clientName"><strong>Ahmed Mohammed,</strong> Student</p>
                     </div>
                   </div>
                   <div class="slide">
                     <img src="Images/Reviews/IbrahimReda.jpg" alt="">
                     <div class="reviewDetails">
-                        <p class="clientReview">As a regular, I'm always impressed by the consistency of quality and service at Yili Restaurant.</p>
+                        <p class="clientReview">As a regular, I'm always impressed by the consistency of quality and service at Grandma’s Bakery.</p>
                         <p class="clientName"><strong>Ibrahim Reda,</strong> Student</p>
                     </div>
                   </div>
                   <div class="slide">
                     <img src="Images/Reviews/MahmoudHosni.jpg" alt="">
                     <div class="reviewDetails">
-                        <p class="clientReview">Impressed with the hygiene and safety measures in place. Felt very safe dining at Yili Restaurant.</p>
+                        <p class="clientReview">Impressed with the hygiene and safety measures in place. Felt very safe dining at Grandma’s Bakery.</p>
                         <p class="clientName"><strong>Mahmoud Hosni,</strong> Student</p>
                     </div>
                   </div>
